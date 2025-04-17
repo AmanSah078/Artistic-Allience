@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Alert System</title>
+    <!-- Bootstrap & Icons -->
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+    
+
+<!-- From: -->
+<link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+<!-- To: -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+
+        .head {
+            font-size: 48px;
+            font-weight: 800;
+            margin-left: 20px;
+            padding: 10px;
+            color: #dc3545;
+        }
+
+        nav {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            padding: 10px 0;
+        }
+
+        .head1 {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .head1 a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .head1 a:hover {
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        .map-container {
+            text-align: center;
+            margin-top: 40px;
+            background-color: #e3f2fd;
+            padding: 30px;
+            border-radius: 12px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .map {
+            width: 90%;
+            height: 500px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        .wheather .btn-primary {
+            font-size: 28px;
+            padding: 15px 30px;
+            margin-top: 30px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 12px;
+            animation: floatBtn 3s ease-in-out infinite;
+        }
+
+        .wheather {
+            margin-top: 40px;
+        }
+
+        .stable img {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .wheathes {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .wheathes .btn-success {
+            font-size: 20px;
+            padding: 12px 25px;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .wheathes .btn-success:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        img.sample-image {
+            margin-top: 40px;
+            max-width: 90%;
+            border-radius: 15px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        footer {
+            background-color: #212529;
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer h3, footer h4 {
+            color: #ffc107;
+        }
+
+        footer .btn {
+            margin: 5px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes floatBtn {
+            0%, 100% {transform: translateY(0);}
+            50% {transform: translateY(-10px);}
+        }
+    </style>
+</head>
+<body id="HOME">
+    <header class="d-flex align-items-center">
+        <img src="images/hack.jpg" width="100" class="ps-4">
+        <span class="head">DISASTER ALERT SYSTEM</span>
+    </header>
+
+    <nav>
+        <div class="head1">
+            <a href="#HOME"><span class="bi bi-house-fill"></span> HOME</a>
+            <a href="/page/3Dasboard"><span class="bi bi-grid"></span> DASHBOARD</a>
+            <a href="/page/2.GoogelForm"><span class="bi bi-person-raised-hand"></span> Raise Help</a>
+            <a href="#CONTACT"><span class="bi bi-phone"></span> CONTACT</a>
+            <a href="link.html"><span class="bi bi-exclamation-circle-fill"></span>Direct Contact for Help</a>
+        </div>
+    </nav>
+
+    <section>
+        <div class="map-container">
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.8000615548616!2d85.69364381486334!3d20.15951648647364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190d1856c20d59%3A0xaab926deaa7fb7e6!2sJatani%2C%20Odisha%2C%20India!5e0!3m2!1sen!2s!4v1615573644000!5m2!1sen!2s"
+                allowfullscreen="" loading="lazy"></iframe>
+
+            <div class="wheather">
+                <a href="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat=20.2333&lon=85.8333&zoom=12" target="_blank">
+                    <button class="btn btn-primary">Live Weather Condition</button>
+                </a>
+            </div>
+            <br>
+            <br>
+           <a href="17tIME.HTML"><button><font color="green"> Weather Alert System</button></a></font>
+            <br>
+
+            <div class="stable">
+                <img src="/images/disater.jpg" alt="Disaster Awareness">
+            </div>
+
+            <div class="wheathes">
+                <a href="13BasicTips.html" class="btn btn-success">Basic Safety Tips</a>
+            </div>
+        </div>
+    </section>
+
+
+<section class="real-time-alerts my-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Real-Time Disaster Alerts</h2>
+        <div class="alert-container" id="alertsContainer">
+            <!-- Alerts will be loaded here -->
+            <div class="alert alert-warning">
+                <strong>Cyclone Warning</strong> for Jatani area - Expected in next 24 hours
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h4>Subscribe to Alerts</h4>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="floodCheck">
+                    <label class="form-check-label" for="floodCheck">Flood Alerts</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="earthquakeCheck">
+                    <label class="form-check-label" for="earthquakeCheck">Earthquake Alerts</label>
+                </div>
+                <button class="btn btn-primary mt-2" id="subscribeBtn">Subscribe</button>
+            </div>
+            <div class="col-md-6">
+                <h4>Report Incident</h4>
+                <select class="form-select mb-2" id="disasterType">
+                    <option value="flood">Flood</option>
+                    <option value="earthquake">Earthquake</option>
+                    <option value="cyclone">Cyclone</option>
+                </select>
+                <button class="btn btn-danger" id="reportBtn">Report Emergency</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// Fetch and display real-time alerts
+function loadAlerts() {
+    fetch('/api/disaster-data/Jatani')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('alertsContainer');
+            container.innerHTML = '';
+            
+            for (const [type, info] of Object.entries(data)) {
+                if (info.level > 0) {
+                    const alertDiv = document.createElement('div');
+                    alertDiv.className = `alert alert-${info.level > 1 ? 'danger' : 'warning'}`;
+                    alertDiv.innerHTML = `<strong>${type.toUpperCase()} Alert</strong> - Level ${info.level}`;
+                    container.appendChild(alertDiv);
+                }
+            }
+        });
+}
+
+// Subscribe to alerts
+document.getElementById('subscribeBtn').addEventListener('click', () => {
+    const alerts = [];
+    if (document.getElementById('floodCheck').checked) alerts.push('flood');
+    if (document.getElementById('earthquakeCheck').checked) alerts.push('earthquake');
+    
+    fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            userId: 'user1', // In real app, use logged in user
+            alertTypes: alerts
+        })
+    }).then(response => alert('Subscriptions updated'));
+});
+
+// Report incident
+document.getElementById('reportBtn').addEventListener('click', () => {
+    const type = document.getElementById('disasterType').value;
+    const severity = prompt('Enter severity level (1-3):');
+    
+    if (severity) {
+        fetch('/api/report', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                location: 'Jatani',
+                disasterType: type,
+                severity: parseInt(severity),
+                userId: 'user1'
+            })
+        }).then(response => alert('Report submitted'));
+    }
+});
+
+// Load alerts on page load and refresh every 5 minutes
+loadAlerts();
+setInterval(loadAlerts, 300000);
+</script>
+
+    <footer id="CONTACT">
+        <div class="container text-center">
+            <h3>Emergency Help & Contact</h3>
+            <p>If you are in danger, please contact emergency services immediately.</p>
+            <div class="contact-info">
+                <p><i class="bi bi-telephone-fill"></i> Hotline: +91 112 (Disaster Response)</p>
+                <p><i class="bi bi-envelope-fill"></i> Email: help@disasteralertsystem.com</p>
+                <p><i class="bi bi-geo-alt-fill"></i> Location: Jatani, Odisha, India</p>
+            </div>
+            <div class="live-location mt-3">
+                <h4>Share Your Live Location for Assistance</h4>
+                <p>Click below to share your location via Google Maps:</p>
+                <a href="https://www.google.com/maps" target="_blank" class="btn btn-warning">
+                    <i class="bi bi-map"></i> Share Live Location
+                </a>
+            </div>
+            <div class="social-links mt-4">
+                <h4>Stay Updated & Connected</h4>
+                <a href="https://facebook.com/disasteralerts" target="_blank" class="btn btn-primary">
+                    <i class="bi bi-facebook"></i> Facebook
+                </a>
+                <a href="https://twitter.com/disasteralerts" target="_blank" class="btn btn-info">
+                    <i class="bi bi-twitter"></i> Twitter
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    // Example of sending data to backend
+    document.addEventListener('DOMContentLoaded', function() {
+        // Example for weather alert button
+        const weatherAlertBtn = document.querySelector('.wheather .btn-primary');
+        if(weatherAlertBtn) {
+            weatherAlertBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Example data to send
+                const alertData = {
+                    type: 'weather_alert',
+                    location: 'Jatani, Odisha',
+                    timestamp: new Date().toISOString()
+                };
+                
+                // Send to backend
+                fetch('/api/alert', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(alertData)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Server response:', data);
+                    window.location.href = e.target.parentElement.href;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        }
+    });
+</script>
+</html>
