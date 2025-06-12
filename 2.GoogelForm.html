@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Assistance Form</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* Global Styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #2193b0, #6dd5ed);
+            color: white;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Container */
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+
+        /* Alert Animation */
+        .alert-danger {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        /* Button Styling */
+        button {
+            margin-top: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Font Customization */
+        .custom-text {
+            transition: all 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center custom-text" id="formTitle">🚨 Disaster Assistance Form</h1>
+
+        <!-- Font Customization -->
+        <div class="mb-3">
+            <label for="fontSize" class="form-label">Change Font Size:</label>
+            <input type="range" id="fontSize" min="16" max="50" value="25" onchange="adjustFontSize()">
+        </div>
+
+        <div class="mb-3">
+            <label for="fontColor" class="form-label">Choose Text Color:</label>
+            <input type="color" id="fontColor" onchange="adjustFontColor()">
+        </div>
+
+        <form>
+            <dl class="p-4 bg-light text-dark rounded shadow">
+                <dt><span class="bi bi-emoji-smile-fill"></span> DON'T WORRY, HELP IS ON THE WAY</dt>
+                <br>
+                <dt>Name:</dt>
+                <dd><input type="text" name="username" class="form-control" required placeholder="Enter Your Name"></dd>
+<dt>Location:</dt>
+                <a href="https://www.google.com/maps" target="_blank" class="btn btn-warning">
+                    <i class="bi bi-map"></i> Current My Live Location
+                </a>
+                <br>        
+<br>
+                <dt>Problem Type:</dt>
+                <ul class="list-group">
+                    <li class="list-group-item"><input type="checkbox" name="Cyclone" value="Cyclone"> &nbsp;Cyclone </li>
+                    <li class="list-group-item"><input type="checkbox" name="Earthquake" value="Earthquake"> &nbsp; Earthquake</li>
+                    <li class="list-group-item"><input type="checkbox" name="Tsunami" value="Tsunami"> Tsunami </li>
+                    <li class="list-group-item"><input type="checkbox" name="Flood" value="Flood"> Flood</li>
+                    <li class="list-group-item"><input type="checkbox" name="Wildfire" value="Wildfire"> Wildfire </li>
+                </ul>
+
+                <button class="btn btn-danger mt-3">Submit Request</button>
+            </dl>
+        </form>
+
+        
+    </div>
+
+    <script>
+        function adjustFontSize() {
+            let newSize = document.getElementById("fontSize").value + "px";
+            document.getElementById("formTitle").style.fontSize = newSize;
+        }
+
+        function adjustFontColor() {
+            let newColor = document.getElementById("fontColor").value;
+            document.getElementById("formTitle").style.color = newColor;
+        }
+
+        function getLiveLocation() {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    document.getElementById("location").value = `Lat: ${position.coords.latitude}, Long: ${position.coords.longitude}`;
+                });
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        }
+    </script>
+</body>
+</html>
